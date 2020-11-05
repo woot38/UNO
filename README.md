@@ -1,1 +1,1 @@
-# de.htwg.se.UNO
+# UNO Cardgame
