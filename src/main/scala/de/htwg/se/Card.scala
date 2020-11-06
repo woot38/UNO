@@ -1,4 +1,4 @@
-package model
+package de.htwg.se
 
 case class Card(num: Int, colour: String) {
   override def toString: String = {
@@ -7,4 +7,3 @@ case class Card(num: Int, colour: String) {
   }
 
 }
-
