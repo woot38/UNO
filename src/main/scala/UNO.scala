@@ -8,6 +8,5 @@ object UNO {
     val card_1 = Card(0,"green", "normal")
     printf("Your just pulled a %s", card_1)
 
-
   }
 }

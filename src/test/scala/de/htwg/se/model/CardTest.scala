@@ -12,7 +12,6 @@ class CardTest extends AnyWordSpec {
         card.num should be(0)
         card.colour should be("green")
         card.funktion should be("normal")
-
       }
 
     }
