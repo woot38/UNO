@@ -1,19 +1,22 @@
 package de.htwg.se.model
 
 
-import org.scalatest._
+import org.scalatest.matchers.should.Matchers._
+import org.scalatest.wordspec.AnyWordSpec
 
-
-class PlayerTest extends WordSpec with Matchers {
-  "A Player" when { "new" should {
-    val player = Player("Your Name")
-    "have a name"  in {
-      player.name should be("Your Name")
+class PlayerTest extends AnyWordSpec {
+  "A player" when {
+    "created" should {
+      val player = Player("Player1Name")
+      "have a name" in {
+        player.name should be("Player1Name")
+      }
+      "and toString should look like" in {
+        player.toString should be("Player1Name")
+      }
+      "when unapplied" in {
+        Player.unapply(player).get should be ("Player1Name")
+      }
     }
-    "have a nice String representation" in {
-      player.toString should be("Your Name")
-    }
-  }}
-
-
+  }
 }
