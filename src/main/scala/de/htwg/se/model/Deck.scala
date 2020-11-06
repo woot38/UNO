@@ -1,4 +1,4 @@
-package de.htwg.se
+package de.htwg.se.model
 
 case object Deck {
   val deck = Array(
