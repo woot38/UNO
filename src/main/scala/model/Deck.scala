@@ -1,7 +1,7 @@
 package model
 
 case object Deck {
-  val all_cards = Array(
+  val deck = Array(
     Card(0,"green"),
     Card(0,"red"),
     Card(0,"blue"),
