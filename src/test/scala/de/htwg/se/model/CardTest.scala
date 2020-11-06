@@ -8,7 +8,7 @@ class CardTest extends AnyWordSpec {
   "A card" when {
     "pulled" should {
       val card = Card(0,"green")
-      "have a colour and colour" in {
+      "have a number and colour" in {
         card.num should be(0)
         card.colour should be("green")
       }
