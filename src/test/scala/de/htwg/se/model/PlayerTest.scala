@@ -16,6 +16,7 @@ class PlayerTest extends AnyWordSpec {
       "when unapplied" in {
         Player.unapply(player).get should be ("Your Name")
       }
+
     }
   }
 
