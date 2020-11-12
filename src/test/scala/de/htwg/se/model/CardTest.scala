@@ -13,6 +13,9 @@ class CardTest extends AnyWordSpec {
         card.colour should be("green")
         card.funktion should be("normal")
       }
+      "and toString should look like" in {
+        card.toString should be("Card: 0, green, normal")
+      }
 
     }
   }
