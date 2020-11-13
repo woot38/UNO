@@ -4,6 +4,7 @@ import org.scalatest.matchers.should.Matchers._
 import org.scalatest.wordspec.AnyWordSpec
 
 class PlayerTest extends AnyWordSpec {
+
   "A player" when {
     "created" should {
       val player = Player("Your Name")
@@ -16,8 +17,6 @@ class PlayerTest extends AnyWordSpec {
       "when unapplied" in {
         Player.unapply(player).get should be ("Your Name")
       }
-
     }
   }
-
 }

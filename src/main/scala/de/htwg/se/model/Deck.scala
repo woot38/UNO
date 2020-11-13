@@ -1,6 +1,8 @@
 package de.htwg.se.model
 
+import scala.util.Random
 
+//soll case class
 case object Deck {
   val complete_deck: Array[Card] = Array(
     Card(0, "green", "normal"),
@@ -23,6 +25,7 @@ case object Deck {
     Card(2, "green", "normal"),
     Card(2, "red", "normal"),
     Card(2, "blue", "normal"),
+    Card(2, "yellow", "normal"),
     Card(2, "yellow", "normal"),
 
     Card(3, "green","normal"),
@@ -117,14 +120,45 @@ case object Deck {
 
     Card(13, "blank", "colour change"),
     Card(13, "blank", "colour change"),
-    Card(13,"blank", "colour change"),
-    Card(13,"blank", "color change"),
+    Card(13, "blank", "colour change"),
+    Card(13, "blank", "color change"),
 
     Card(14, "blank", "pull +4 and colour change"),
     Card(14, "blank", "pull +4 and colour change"),
-    Card(14,"blank", "pull +4 and colour change"),
-    Card(14,"blank", "pull +4 and colour change")
+    Card(14, "blank", "pull +4 and colour change"),
+    Card(14, "blank", "pull +4 and colour change")
 
   )
 
+  //soll vector
+  val gzkarten = new Array[Card](108)
+
+  def setgzkarten(ind: Int, card: Card) = {
+    Deck.gzkarten(ind) = card
+  }
+
+  //options
+  def contains(ind: Int): Boolean = {
+    try {
+      if (Deck.gzkarten(ind).equals(Deck.complete_deck(ind))) {
+        false
+      } else {
+        true
+      }
+    }
+    catch {
+      case nullPointerException: NullPointerException => true
+    }
+  }
+
+  def rndnbm: Random = {new Random()}
+
+  def drawcard: Card ={
+    var cardnmb = rndnbm.nextInt(complete_deck.length)
+    while(!Deck.contains(cardnmb)) {
+      cardnmb = rndnbm.nextInt(complete_deck.length)
+    }
+    setgzkarten(cardnmb,Deck.complete_deck(cardnmb))
+    Deck.complete_deck(cardnmb)
+  }
 }
