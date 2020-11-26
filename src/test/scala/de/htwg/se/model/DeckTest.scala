@@ -5,15 +5,15 @@ import org.scalatest.wordspec.AnyWordSpec
 
 
 class DeckTest extends AnyWordSpec {
-  "Deck" should {
-    "have the cards" in {
-      Deck.complete_deck(0) should be (Card(0, "green", "normal"))
+
+  "A Deck" when {
+    "add a new card to a Deck" in{
+      var deck = new Deck()
+      deck.fillDeck()
+      deck.getSize() should be(108)
+      deck.drawCard()
+      deck.getSize() should be(107)
     }
   }
 
-  "Deck" should {
-    "have boolean" in {
-      Deck.contains(1) shouldBe true
-    }
-  }
 }
