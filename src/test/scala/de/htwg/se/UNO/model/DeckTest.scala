@@ -8,12 +8,11 @@ class DeckTest extends AnyWordSpec {
 
   "A Deck" when {
     "add a new card to a Deck" in{
-      var deck = new Deck()
+      var deck = Deck()
       deck.fillDeck()
       deck.getSize() should be(108)
       deck.drawCard()
       deck.getSize() should be(107)
     }
   }
-
 }
