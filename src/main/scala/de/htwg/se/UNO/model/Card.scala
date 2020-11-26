@@ -1,4 +1,4 @@
-package de.htwg.se.model
+package de.htwg.se.UNO.model
 
 sealed trait Color
 sealed case class Red() extends Color {

@@ -1,5 +1,4 @@
-package de.htwg.se.model
-
+package de.htwg.se.UNO.model
 
 import scala.collection.mutable.ListBuffer
 
