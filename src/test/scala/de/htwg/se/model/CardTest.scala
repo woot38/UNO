@@ -7,17 +7,11 @@ import org.scalatest.wordspec.AnyWordSpec
 class CardTest extends AnyWordSpec {
   "A card" when {
     "pulled" should {
-      val card = Card(0,"green", "normal")
+      val card = Card(Blue(), One())
       "have a number, colour and function" in {
-        card.num should be(0)
-        card.colour should be("green")
-        card.funktion should be("normal")
+        card.rank should be(One())
+        card.color should be(Blue())
       }
-      "and toString should look like" in {
-        card.toString should be("Card: 0, green, normal")
-      }
-
     }
   }
-
 }

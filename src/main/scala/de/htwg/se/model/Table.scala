@@ -2,17 +2,25 @@ package de.htwg.se.model
 
 import scala.collection.mutable.ListBuffer
 
-case class Table() {
+object Table {
   var Players = new ListBuffer[Player]
-  var dot = new ListBuffer[Card]
+  var dot = new Deck
   var lcp = new ListBuffer[Card]
-  //val direction any ideas?
-  def getLCP(): Card = lcp.apply(lcp.length)
+}
 
-  def playCard(pc:Card): Unit = lcp:+pc
+case class Table() {
 
-  def addPlayer(name:String): Unit = Players.addOne(Player(name))
+  def getLCP(): Card = Table.lcp.apply(Table.lcp.length)
 
+  def playCard(pc:Card): Unit = Table.lcp:+pc
 
-  //def chdir(): Unit =
+  def addPlayer(name:String): Unit = Table.Players.addOne(Player(name))
+
+  def getNextP(cp: Player): Player = {
+    val poscp = Table.Players.indexOf(cp)
+    if (poscp == Table.Players.length-1) Table.Players.head
+    else Table.Players.apply(poscp+1)
+  }
+
+  def chDir(): Unit = Table.Players.reverse
 }
