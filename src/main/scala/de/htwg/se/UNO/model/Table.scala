@@ -1,7 +1,7 @@
 package de.htwg.se.UNO.model
 
-import scala.collection.mutable.ListBuffer
 
+import scala.collection.mutable.ListBuffer
 
 
 case class Table() {
