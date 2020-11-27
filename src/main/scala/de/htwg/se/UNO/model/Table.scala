@@ -31,6 +31,4 @@ case class Table() {
 
   def chDir(): Unit = Players = Players.reverse
 
-  def startGame(): Boolean = if (Players.length >= 2) startable = true
-
 }
