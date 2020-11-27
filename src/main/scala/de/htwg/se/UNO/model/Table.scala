@@ -29,6 +29,5 @@ case class Table() {
     else Table.cP = getcPpos()+1
   }
 
-  //prob here or above bugged xD
-  def chDir(): Unit = Table.Players.reverse
+  def chDir(): Unit = Table.Players = Table.Players.reverse
 }
