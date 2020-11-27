@@ -1,31 +1,29 @@
 package de.htwg.se.aview
 
-/*
+import de.htwg.se.UNO.controller.Controller
+import de.htwg.se.UNO.util._
+
 case class Tui(var c : Controller) extends Observer {
 
-  c.this (this)
+  c.add(this)
 
-  def processInputLine(input: String): Boolean = {
-    run(input)
-    c.gameState != END
-  }
 
-  def run(input: String): Unit = {
-    val comInput = c.splitFlatString(input)
-    if (comInput.length > 0) {
-      comInput(0) match {
-        case "EXIT" => c.exit
-        case "HELP" => c.help
-        case "LOAD" => if (comInput.length == 2) load(comInput(1)) else c.wrongInput(input)
-        case "INFO" => if (comInput.length == 2) c.info(comInput(1)) else c.wrongInput(input)
-        case "SHOOT" => if (comInput.length == 3) c.aim(comInput(1), comInput(2)) else c.wrongInput(input)
-        case "MOVE" => if (comInput.length == 4) move(comInput(1), comInput(2), comInput(3)) else c.wrongInput(input)
-        case "YES" | "Y" | "NO" | "N" => if (comInput(0) == "YES" || comInput(0) == "Y") c.shoot(true) else c.shoot(false)
-        case _ => c.wrongInput(input)
+  def processInputLine(input: String):Unit = {
+    input match {
+      case "q" =>
+      case "newPlayer"=> c.createPlayer(input)
+      case "r" => c.createRandomGrid(size, randomCells)
+      case "s" =>
+        val success = c.solve
+        if (success) println("Puzzle solved")else println("This puzzle could not be solved!")
+      case _ => input.toList.filter(c => c != ' ').map(c => c.toString.toInt) match {
+        case row :: column :: value :: Nil => controller.set(row, column, value)
+        case _ =>
       }
+
     }
   }
+
+  override def update: Unit =  println(c.gridToString)
 }
 
-
- */
