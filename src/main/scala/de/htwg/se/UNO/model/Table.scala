@@ -30,4 +30,7 @@ case class Table() {
   }
 
   def chDir(): Unit = Table.Players = Table.Players.reverse
+
+  //def getPlayableC():
+
 }
