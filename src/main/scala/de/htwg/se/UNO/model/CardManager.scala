@@ -3,8 +3,6 @@ package de.htwg.se.UNO.model
 import scala.collection.mutable.ListBuffer
 
 object CardManager {
-  //var thirdhand = ListBuffer
-
 
   def playable(card: Card): Boolean = {
     var cantdecide = false
@@ -14,6 +12,6 @@ object CardManager {
     cantdecide
   }
 
-  //def getPlayable(cards: ListBuffer[Card]): =
+  def getPlayable(cards: ListBuffer[Card]): Unit = for (x <- cards) if(playable(x)) printf(x.toString)
 
 }

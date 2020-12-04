@@ -33,5 +33,4 @@ case class Table() {
   }
 
   def chDir(): Unit = Players = Players.reverse
-
 }
