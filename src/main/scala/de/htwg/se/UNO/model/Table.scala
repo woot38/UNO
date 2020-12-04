@@ -3,17 +3,20 @@ package de.htwg.se.UNO.model
 
 import scala.collection.mutable.ListBuffer
 
+object Table {
+  var lcp = new ListBuffer[Card]
+}
+
 
 case class Table() {
   var Players = new ListBuffer[Player]
   var dot = new Deck
-  var lcp = new ListBuffer[Card]
   var cP = 0
   var startable = false
 
-  def getLCP(): Card = lcp.apply(lcp.length)
+  def getLCP(): Card = Table.lcp.apply(Table.lcp.length)
 
-  def playCard(pc:Card): Unit = lcp:+pc
+  def playCard(pc:Card): Unit = Table.lcp:+pc
 
   def drawCardDeck(): Card = dot.drawCard()
 
